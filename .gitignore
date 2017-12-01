@@ -21,6 +21,5 @@ yarn-error.log
 .vscode
 package-lock.json
 examples/
-dist/
 build/
 test/

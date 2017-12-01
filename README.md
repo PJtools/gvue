@@ -1,4 +1,4 @@
-# vlib
+# gvue
 基于Vue2.x + vue-router + Vuex进行扩展封装，提供脚手架进行依赖注入.
 
 ## 说明
@@ -17,6 +17,7 @@
 │   ├── directive              // 全局指令
 │   ├── filters                // 全局过滤接口
 │   ├── locale                 // 全局多语言集
+│   ├── mixins                 // Vue mixins
 │   ├── styles                 // 全局样式
 │   ├── utils                  // 全局公用函数/方法
 │   └── index.js               // 整体导出入口
