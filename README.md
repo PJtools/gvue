@@ -7,7 +7,7 @@
 ## 开发
 ```bash
     # 安装
-    npm install git+ssh://git@github.com:PJtools/gvue.git --save
+    npm install gvue --save
 ```
 
 ## 目录结构
