@@ -1,0 +1,70 @@
+// 定义指定宽度容器居中
+.phorizontal(@pct: 100%) {
+  width: @pct;
+  position: relative;
+  margin: 0 auto;
+}
+
+// 定义三角形（宽度|高度|颜色值|[方向：up|right|down|left]）
+.triangle(@width, @height, @color, @direction) {
+  height: 0;
+  width: 0;
+}
+.triangle(@width, @height, @color, @direction) when (@direction = up) {
+  border-bottom: @height solid @color;
+  border-left: (@width / 2) solid transparent;
+  border-right: (@width / 2) solid transparent;
+}
+.triangle(@width, @height, @color, @direction) when (@direction = right) {
+  border-left: @height solid @color;
+  border-top: (@width / 2) solid transparent;
+  border-bottom: (@width / 2) solid transparent;
+}
+.triangle(@width, @height, @color, @direction) when (@direction = down) {
+  border-top: @height solid @color;
+  border-left: (@width / 2) solid transparent;
+  border-right: (@width / 2) solid transparent;
+}
+.triangle(@width, @height, @color, @direction) when (@direction = left) {
+  border-right: @height solid @color;
+  border-top: (@width / 2) solid transparent;
+  border-bottom: (@width / 2) solid transparent;
+}
+
+// 定义Webkit内核滚动条
+.scrollbar() {
+  @width: 6px;
+  @height: @width;
+
+  /* 整体部分 */
+  &::-webkit-scrollbar {
+    width: @width;
+    height: @height;
+  }
+  /* 滑动轨道 */
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0);
+  }
+  /* 滑块 */
+  &::-webkit-scrollbar-thumb {
+    border-radius: (@width / 2);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.05);
+  }
+  /* 滑块效果 */
+  &::-webkit-scrollbar-thumb:hover {
+    border-radius: (@width / 2);
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+// 定义线性渐变背景色
+.gradient(@angle: top, @start, @stop) {
+  background: -webkit-linear-gradient(@angle, @start, @stop);
+  background: -moz-linear-gradient(@angle, @start, @stop);
+  background: -o-linear-gradient(@angle, @start, @stop);
+  background: linear-gradient(@angle, @start, @stop);
+}

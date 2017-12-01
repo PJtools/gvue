@@ -1,0 +1,18 @@
+// ----- 覆盖iview Start -----
+
+//LoadingBar组件样式
+.@{loading-bar-prefix-cls} {
+  &-inner {
+    &-color-primary {
+      background-color: spin(@primary-color, 10);
+      box-shadow: 5px 0 8px lighten(@primary-color, 50%);
+    }
+
+    &-failed-color-error {
+      background-color: @error-color;
+      box-shadow: 3px 0 8px lighten(@error-color, 50%);
+    }
+  }
+}
+
+// ----- 覆盖iview End -----
