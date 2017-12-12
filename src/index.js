@@ -5,7 +5,7 @@ import locale from './locale/index';
 import filters from './filters/index';
 import utils from './utils/index';
 
-import { Menu, Submenu, MenuItem, MenuItemGroup } from 'element-ui';
+import { Menu, Submenu, MenuItem, MenuItemGroup, Tree, Table } from 'element-ui';
 import iView from 'iview';
 
 const components = {
@@ -26,9 +26,13 @@ const install = function(Vue, opts = {}) {
   Vue.use(Submenu);
   Vue.use(MenuItem);
   Vue.use(MenuItemGroup);
+  Vue.use(Tree);
+  Vue.use(Table);
 
-  // 注册整个iView组件
-  Vue.use(iView);
+  // 注册整个iView组件，同时解决i18n国际化问题
+  Vue.use(iView, {
+    i18n: opts.i18n
+  });
 
   // 注册组件
   Object.keys(gvue).forEach(key => {
